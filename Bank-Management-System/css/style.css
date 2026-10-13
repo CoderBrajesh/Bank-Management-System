@@ -1,0 +1,1086 @@
+/* =====================================================
+   1. RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   2. ROOT VARIABLES
+===================================================== */
+
+:root {
+
+    /* Main Colors */
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --primary-light: #dbeafe;
+
+    /* Background */
+    --body-bg: #f1f5f9;
+    --card-bg: #ffffff;
+
+    /* Text */
+    --text-dark: #0f172a;
+    --text: #334155;
+    --text-light: #64748b;
+    --text-muted: #94a3b8;
+
+    /* Borders */
+    --border: #e2e8f0;
+    --input-border: #cbd5e1;
+
+    /* Status */
+    --success: #16a34a;
+    --success-bg: #dcfce7;
+
+    --danger: #dc2626;
+    --danger-bg: #fee2e2;
+
+    --warning: #d97706;
+    --warning-bg: #fef3c7;
+
+    --info: #0284c7;
+    --info-bg: #e0f2fe;
+
+    /* Sidebar */
+    --sidebar-bg: #0f172a;
+    --sidebar-text: #cbd5e1;
+
+    /* Radius */
+    --radius-sm: 6px;
+    --radius: 10px;
+    --radius-lg: 16px;
+
+    /* Shadow */
+    --shadow-sm:
+        0 2px 8px rgba(15, 23, 42, 0.05);
+
+    --shadow:
+        0 5px 20px rgba(15, 23, 42, 0.07);
+
+    --shadow-lg:
+        0 15px 40px rgba(15, 23, 42, 0.12);
+
+    /* Transition */
+    --transition: 0.3s ease;
+}
+
+
+/* =====================================================
+   3. BODY
+===================================================== */
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: var(--body-bg);
+
+    color: var(--text-dark);
+
+    min-height: 100vh;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   4. LINKS
+===================================================== */
+
+a {
+    color: inherit;
+
+    text-decoration: none;
+}
+
+
+/* =====================================================
+   5. BUTTON RESET
+===================================================== */
+
+button,
+input,
+select,
+textarea {
+
+    font-family: inherit;
+}
+
+
+button {
+
+    border: none;
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   6. IMAGES
+===================================================== */
+
+img {
+
+    max-width: 100%;
+
+    display: block;
+}
+
+
+/* =====================================================
+   7. COMMON CONTAINER
+===================================================== */
+
+.container {
+
+    width: 100%;
+
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    padding: 0 25px;
+}
+
+
+/* =====================================================
+   8. COMMON CARD
+===================================================== */
+
+.card {
+
+    background: var(--card-bg);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow);
+
+    padding: 25px;
+}
+
+
+/* =====================================================
+   9. CARD HOVER
+===================================================== */
+
+.card-hover {
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+
+.card-hover:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow: var(--shadow-lg);
+}
+
+
+/* =====================================================
+   10. HEADINGS
+===================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+    color: var(--text-dark);
+
+    line-height: 1.25;
+}
+
+
+.page-title {
+
+    font-size: 30px;
+
+    font-weight: 700;
+}
+
+
+.section-title {
+
+    font-size: 21px;
+
+    font-weight: 700;
+
+    margin-bottom: 18px;
+}
+
+
+/* =====================================================
+   11. PAGE DESCRIPTION
+===================================================== */
+
+.page-description {
+
+    color: var(--text-light);
+
+    margin-top: 5px;
+
+    font-size: 15px;
+}
+
+
+/* =====================================================
+   12. PRIMARY BUTTON
+===================================================== */
+
+.btn-primary {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 12px 20px;
+
+    background: var(--primary);
+
+    color: white;
+
+    border-radius: var(--radius);
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition: var(--transition);
+}
+
+
+.btn-primary:hover {
+
+    background: var(--primary-dark);
+
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   13. SECONDARY BUTTON
+===================================================== */
+
+.btn-secondary {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 12px 20px;
+
+    background: #f8fafc;
+
+    color: var(--text);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition: var(--transition);
+}
+
+
+.btn-secondary:hover {
+
+    background: #e2e8f0;
+}
+
+
+/* =====================================================
+   14. DANGER BUTTON
+===================================================== */
+
+.btn-danger {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 12px 20px;
+
+    background: var(--danger);
+
+    color: white;
+
+    border-radius: var(--radius);
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition: var(--transition);
+}
+
+
+.btn-danger:hover {
+
+    background: #b91c1c;
+}
+
+
+/* =====================================================
+   15. SUCCESS BUTTON
+===================================================== */
+
+.btn-success {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 12px 20px;
+
+    background: var(--success);
+
+    color: white;
+
+    border-radius: var(--radius);
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition: var(--transition);
+}
+
+
+.btn-success:hover {
+
+    background: #15803d;
+}
+
+
+/* =====================================================
+   16. FORM GROUP
+===================================================== */
+
+.form-group {
+
+    margin-bottom: 20px;
+}
+
+
+.form-group label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--text);
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   17. INPUT / SELECT / TEXTAREA
+===================================================== */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+
+    width: 100%;
+
+    padding: 13px 14px;
+
+    background: white;
+
+    border: 1px solid var(--input-border);
+
+    border-radius: var(--radius);
+
+    color: var(--text-dark);
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: var(--transition);
+}
+
+
+.form-group textarea {
+
+    min-height: 120px;
+
+    resize: vertical;
+}
+
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+
+    color: var(--text-muted);
+}
+
+
+/* =====================================================
+   18. INPUT ERROR
+===================================================== */
+
+.input-error {
+
+    border-color: var(--danger) !important;
+
+    box-shadow:
+        0 0 0 3px rgba(220, 38, 38, 0.10) !important;
+}
+
+
+/* =====================================================
+   19. FORM ERROR MESSAGE
+===================================================== */
+
+.error-message {
+
+    margin-top: 6px;
+
+    color: var(--danger);
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   20. FORM SUCCESS MESSAGE
+===================================================== */
+
+.success-message {
+
+    padding: 12px 15px;
+
+    background: var(--success-bg);
+
+    color: #15803d;
+
+    border-radius: var(--radius);
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   21. ALERTS
+===================================================== */
+
+.alert {
+
+    padding: 13px 16px;
+
+    border-radius: var(--radius);
+
+    margin-bottom: 20px;
+
+    font-size: 14px;
+}
+
+
+.alert-success {
+
+    background: var(--success-bg);
+
+    color: #15803d;
+}
+
+
+.alert-danger {
+
+    background: var(--danger-bg);
+
+    color: #b91c1c;
+}
+
+
+.alert-warning {
+
+    background: var(--warning-bg);
+
+    color: #92400e;
+}
+
+
+.alert-info {
+
+    background: var(--info-bg);
+
+    color: #0369a1;
+}
+
+
+/* =====================================================
+   22. BADGES
+===================================================== */
+
+.badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+.badge-success {
+
+    background: var(--success-bg);
+
+    color: #15803d;
+}
+
+
+.badge-danger {
+
+    background: var(--danger-bg);
+
+    color: #b91c1c;
+}
+
+
+.badge-warning {
+
+    background: var(--warning-bg);
+
+    color: #92400e;
+}
+
+
+.badge-info {
+
+    background: var(--info-bg);
+
+    color: #0369a1;
+}
+
+
+/* =====================================================
+   23. AMOUNT TEXT
+===================================================== */
+
+.amount-credit {
+
+    color: var(--success);
+
+    font-weight: 700;
+}
+
+
+.amount-debit {
+
+    color: var(--danger);
+
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   24. FLEX UTILITIES
+===================================================== */
+
+.flex {
+
+    display: flex;
+}
+
+
+.flex-center {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.flex-between {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.flex-column {
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+/* =====================================================
+   25. GAP UTILITIES
+===================================================== */
+
+.gap-5 {
+
+    gap: 5px;
+}
+
+
+.gap-10 {
+
+    gap: 10px;
+}
+
+
+.gap-15 {
+
+    gap: 15px;
+}
+
+
+.gap-20 {
+
+    gap: 20px;
+}
+
+
+.gap-25 {
+
+    gap: 25px;
+}
+
+
+/* =====================================================
+   26. TEXT UTILITIES
+===================================================== */
+
+.text-center {
+
+    text-align: center;
+}
+
+
+.text-muted {
+
+    color: var(--text-light);
+}
+
+
+.text-success {
+
+    color: var(--success);
+}
+
+
+.text-danger {
+
+    color: var(--danger);
+}
+
+
+.text-warning {
+
+    color: var(--warning);
+}
+
+
+/* =====================================================
+   27. SPACING
+===================================================== */
+
+.mt-10 {
+
+    margin-top: 10px;
+}
+
+
+.mt-20 {
+
+    margin-top: 20px;
+}
+
+
+.mt-30 {
+
+    margin-top: 30px;
+}
+
+
+.mb-10 {
+
+    margin-bottom: 10px;
+}
+
+
+.mb-20 {
+
+    margin-bottom: 20px;
+}
+
+
+.mb-30 {
+
+    margin-bottom: 30px;
+}
+
+
+/* =====================================================
+   28. TABLE
+===================================================== */
+
+.table-wrapper {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+    background: white;
+
+    border-radius: var(--radius-lg);
+}
+
+
+.table {
+
+    width: 100%;
+
+    min-width: 700px;
+
+    border-collapse: collapse;
+}
+
+
+.table th {
+
+    padding: 14px;
+
+    background: #f8fafc;
+
+    color: var(--text-light);
+
+    text-align: left;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+.table td {
+
+    padding: 15px 14px;
+
+    border-bottom: 1px solid var(--border);
+
+    color: var(--text);
+
+    font-size: 14px;
+}
+
+
+.table tr:last-child td {
+
+    border-bottom: none;
+}
+
+
+.table tbody tr:hover {
+
+    background: #f8fafc;
+}
+
+
+/* =====================================================
+   29. MODAL
+===================================================== */
+
+.modal {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    padding: 20px;
+
+    background:
+        rgba(15, 23, 42, 0.65);
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.modal.show {
+
+    display: flex;
+}
+
+
+.modal-content {
+
+    width: 100%;
+
+    max-width: 500px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 30px;
+
+    background: white;
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-lg);
+
+    position: relative;
+}
+
+
+.modal-close {
+
+    position: absolute;
+
+    top: 15px;
+
+    right: 15px;
+
+    width: 34px;
+
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #f1f5f9;
+
+    color: var(--text);
+
+    border-radius: 50%;
+
+    font-size: 20px;
+}
+
+
+.modal-close:hover {
+
+    background: #e2e8f0;
+}
+
+
+/* =====================================================
+   30. DIVIDER
+===================================================== */
+
+.divider {
+
+    width: 100%;
+
+    height: 1px;
+
+    background: var(--border);
+
+    margin: 20px 0;
+}
+
+
+/* =====================================================
+   31. EMPTY STATE
+===================================================== */
+
+.empty-state {
+
+    padding: 50px 20px;
+
+    text-align: center;
+
+    color: var(--text-light);
+}
+
+
+.empty-state-icon {
+
+    font-size: 45px;
+
+    margin-bottom: 15px;
+}
+
+
+.empty-state h3 {
+
+    margin-bottom: 7px;
+
+    color: var(--text);
+}
+
+
+/* =====================================================
+   32. LOADING
+===================================================== */
+
+.loading {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 40px;
+
+    color: var(--text-light);
+}
+
+
+/* =====================================================
+   33. HIDDEN
+===================================================== */
+
+.hidden {
+
+    display: none !important;
+}
+
+
+/* =====================================================
+   34. MOBILE BASE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .container {
+
+        padding: 0 15px;
+    }
+
+
+    .page-title {
+
+        font-size: 25px;
+    }
+
+
+    .card {
+
+        padding: 20px;
+    }
+
+
+    .modal-content {
+
+        padding: 25px 20px;
+    }
+
+}
+
+/* 11th step  */
+
+
+@media (max-width: 768px) {
+
+    .login-container,
+    .login-wrapper {
+        width: 100%;
+        min-height: 100vh;
+    }
+
+
+    .login-left,
+    .login-brand-section {
+        display: none;
+    }
+
+
+    .login-right,
+    .login-form-section {
+        width: 100%;
+        padding: 25px 18px;
+    }
+
+
+    .login-card {
+        width: 100%;
+        max-width: 430px;
+        margin: 0 auto;
+    }
+
+
+    .login-title {
+        font-size: 26px;
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .login-right,
+    .login-form-section {
+        padding: 20px 14px;
+    }
+
+
+    .login-title {
+        font-size: 23px;
+    }
+
+}

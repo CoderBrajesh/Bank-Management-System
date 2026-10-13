@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Settings - SecureBank</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <div class="dashboard-layout">
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+        <!-- ================= SIDEBAR ================= -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-logo">
+                <div class="logo-icon">SB</div>
+
+                <div>
+                    <h2>SecureBank</h2>
+                    <span>Online Banking</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a href="dashboard.html" class="nav-item">
+                    <span class="nav-icon">🏠</span>
+                    Dashboard
+                </a>
+
+                <a href="deposit.html" class="nav-item">
+                    <span class="nav-icon">💰</span>
+                    Deposit
+                </a>
+
+                <a href="withdraw.html" class="nav-item">
+                    <span class="nav-icon">💸</span>
+                    Withdraw
+                </a>
+
+                <a href="transfer.html" class="nav-item">
+                    <span>↔️</span>
+                    Transfer
+                </a>
+
+                <a href="transactions.html" class="nav-item">
+                    <span class="nav-icon">📋</span>
+                    Transactions
+                </a>
+
+                <a href="account.html" class="nav-item">
+                    <span class="nav-icon">👤</span>
+                    Account Details
+                </a>
+
+                <a href="card.html" class="nav-item">
+                    <span class="nav-icon">💳</span>
+                    My Card
+                </a>
+
+                <a href="beneficiaries.html" class="nav-item">
+                    <span class="nav-icon">👥</span>
+                    Beneficiaries
+                </a>
+
+                <a href="statement.html" class="nav-item">
+                    <span class="nav-icon">📄</span>
+                    Bank Statement
+                </a>
+
+                <a href="notifications.html" class="nav-item">
+                    <span class="nav-icon">🔔</span>
+                    Notifications
+                    <span class="sidebar-notification-count" id="sidebarNotificationCount"></span>
+                </a>
+
+                <a href="settings.html" class="active">
+                    <span>⚙️</span>
+                    Settings
+                </a>
+
+            </nav>
+
+            <div class="sidebar-footer">
+
+                <button class="btn-danger logout-btn">
+                    <span>🚪</span>
+                    Logout
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ================= MAIN CONTENT ================= -->
+
+        <main class="main-content">
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    ☰
+                </button>
+
+                <div class="topbar-spacer"></div>
+
+                <div class="topbar-right">
+
+                    <a href="notifications.html" class="notification-btn">
+                        🔔
+                        <span id="topNotificationCount" class="notification-count"></span>
+                    </a>
+
+                    <div class="topbar-user">
+
+                        <div class="user-avatar" id="userAvatar">
+                            A
+                        </div>
+
+                        <div class="user-info">
+                            <strong id="topUserName">Admin User</strong>
+                            <span>Savings Account</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- PAGE CONTENT -->
+            <section class="page-content">
+
+                <div class="page-header">
+
+                    <div>
+                        <h2 class="page-title">Settings</h2>
+                        <p class="page-description">
+                            Customize your SecureBank account preferences.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- ================= ACCOUNT SUMMARY ================= -->
+
+                <div class="settings-account-card">
+
+                    <div class="settings-account-avatar" id="settingsAvatar">
+                        A
+                    </div>
+
+                    <div class="settings-account-info">
+
+                        <h3 id="settingsUserName">
+                            Admin User
+                        </h3>
+
+                        <p id="settingsUserEmail">
+                            admin@securebank.com
+                        </p>
+
+                        <span class="settings-account-number">
+                            Account: <strong id="settingsAccountNumber">45897821</strong>
+                        </span>
+
+                    </div>
+
+                    <a href="account.html" class="btn-secondary">
+                        Edit Profile
+                    </a>
+
+                </div>
+
+
+                <div class="settings-grid">
+
+
+                    <!-- ================= APPEARANCE ================= -->
+
+                    <div class="settings-card">
+
+                        <div class="settings-card-header">
+
+                            <div class="settings-card-icon">
+                                🎨
+                            </div>
+
+                            <div>
+                                <h3>Appearance</h3>
+                                <p>Customize how the application looks.</p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="settings-option">
+
+                            <div class="settings-option-text">
+
+                                <strong>Dark Mode</strong>
+
+                                <span>
+                                    Use a dark theme throughout the application.
+                                </span>
+
+                            </div>
+
+                            <label class="switch">
+
+                                <input type="checkbox" id="darkModeToggle">
+
+                                <span class="slider"></span>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ================= NOTIFICATIONS ================= -->
+
+                    <div class="settings-card">
+
+                        <div class="settings-card-header">
+
+                            <div class="settings-card-icon">
+                                🔔
+                            </div>
+
+                            <div>
+                                <h3>Notifications</h3>
+                                <p>Manage your notification preferences.</p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="settings-option">
+
+                            <div class="settings-option-text">
+
+                                <strong>Bank Notifications</strong>
+
+                                <span>
+                                    Receive transaction and account notifications.
+                                </span>
+
+                            </div>
+
+                            <label class="switch">
+
+                                <input type="checkbox" id="notificationToggle">
+
+                                <span class="slider"></span>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ================= SECURITY ================= -->
+
+                    <div class="settings-card">
+
+                        <div class="settings-card-header">
+
+                            <div class="settings-card-icon">
+                                🔐
+                            </div>
+
+                            <div>
+                                <h3>Security</h3>
+                                <p>Update your demo login password.</p>
+                            </div>
+
+                        </div>
+
+
+                        <form id="passwordForm">
+
+                            <div class="form-group">
+
+                                <label for="currentPassword">
+                                    Current Password
+                                </label>
+
+                                <input type="password" id="currentPassword" placeholder="Enter current password">
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="newPassword">
+                                    New Password
+                                </label>
+
+                                <input type="password" id="newPassword" placeholder="Enter new password">
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="confirmPassword">
+                                    Confirm New Password
+                                </label>
+
+                                <input type="password" id="confirmPassword" placeholder="Confirm new password">
+
+                            </div>
+
+
+                            <button type="submit" class="btn-primary">
+                                Change Password
+                            </button>
+
+                        </form>
+
+                        <div id="passwordMessage"></div>
+
+                    </div>
+
+
+                    <!-- ================= DEMO DATA ================= -->
+
+                    <div class="settings-card danger-settings-card">
+
+                        <div class="settings-card-header">
+
+                            <div class="settings-card-icon danger-icon">
+                                ⚠️
+                            </div>
+
+                            <div>
+                                <h3>Demo Data</h3>
+
+                                <p>
+                                    Reset all bank data to the original demo state.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="settings-danger-content">
+
+                            <p>
+                                This will remove your transactions,
+                                beneficiaries, notifications and restore
+                                the original demo balance.
+                            </p>
+
+                            <button type="button" class="btn-danger" id="resetDataBtn">
+                                Reset Demo Data
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ================= ABOUT ================= -->
+
+                    <div class="settings-card">
+
+                        <div class="settings-card-header">
+
+                            <div class="settings-card-icon">
+                                ℹ️
+                            </div>
+
+                            <div>
+                                <h3>About</h3>
+                                <p>Project information.</p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="settings-about">
+
+                            <div>
+                                <span>Application</span>
+                                <strong>SecureBank</strong>
+                            </div>
+
+                            <div>
+                                <span>Version</span>
+                                <strong>1.0.0</strong>
+                            </div>
+
+                            <div>
+                                <span>Project Type</span>
+                                <strong>School / Demo Project</strong>
+                            </div>
+
+                            <div>
+                                <span>Technology</span>
+                                <strong>HTML, CSS & JavaScript</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SUCCESS MESSAGE -->
+
+                <div id="settingsMessage" class="settings-page-message"></div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="js/common.js"></script>
+    <script src="js/settings.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Withdraw Money - SecureBank</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+
+<body>
+
+
+    <div class="dashboard-layout">
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+
+        <!-- SIDEBAR -->
+
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-logo">
+
+                <h2>🏦 SecureBank</h2>
+
+                <p>Bank Management System</p>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <p class="nav-title">
+                    Main Menu
+                </p>
+
+
+                <a href="dashboard.html" class="nav-item">
+
+                    <span class="nav-icon">
+                        📊
+                    </span>
+
+                    Dashboard
+
+                </a>
+
+
+                <a href="deposit.html" class="nav-item">
+
+                    <span class="nav-icon">
+                        💰
+                    </span>
+
+                    Deposit
+
+                </a>
+
+
+                <a href="withdraw.html" class="nav-item active">
+
+                    <span class="nav-icon">
+                        💸
+                    </span>
+
+                    Withdraw
+
+                </a>
+
+
+                <a href="transfer.html" class="nav-item">
+
+                    <span class="nav-icon">
+                        🔄
+                    </span>
+
+                    Transfer
+
+                </a>
+
+
+                <a href="transactions.html" class="nav-item">
+
+                    <span class="nav-icon">
+                        📋
+                    </span>
+
+                    Transactions
+
+                </a>
+
+
+                <p class="nav-title" style="margin-top:25px;">
+
+                    Account
+
+                </p>
+
+
+                <a href="account.html" class="nav-item">
+
+                    <span class="nav-icon">
+                        👤
+                    </span>
+
+                    Account Details
+
+                </a>
+
+
+                <a href="card.html" class="nav-item">
+
+                    <span class="nav-icon">
+                        💳
+                    </span>
+
+                    My Card
+
+                </a>
+
+
+                <a href="beneficiaries.html" class="nav-item">
+
+                    <span class="nav-icon">
+                        👥
+                    </span>
+
+                    Beneficiaries
+
+                </a>
+
+
+                <a href="statement.html" class="nav-item">
+
+                    <span class="nav-icon">
+                        📄
+                    </span>
+
+                    Bank Statement
+
+                </a>
+
+
+                <a href="notifications.html" class="nav-item">
+
+                    <span class="nav-icon">
+                        🔔
+                    </span>
+
+                    Notifications
+
+                </a>
+
+
+                <a href="settings.html" class="nav-item">
+
+                    <span class="nav-icon">
+                        ⚙️
+                    </span>
+
+                    Settings
+
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-footer">
+
+                <button class="btn-danger logout-btn">
+                    🚪 Logout
+                </button>
+
+            </div>
+
+        </aside>
+
+
+
+
+        <!-- MAIN CONTENT -->
+
+
+        <main class="dashboard-main">
+
+
+            <!-- TOPBAR -->
+
+            <header class="dashboard-topbar">
+
+
+                <div>
+
+                    <button class="menu-btn" id="menuBtn">
+
+                        ☰
+
+                    </button>
+
+
+                    <span class="topbar-title">
+                        Withdraw Money
+                    </span>
+
+                </div>
+
+
+                <div class="topbar-right">
+
+
+                    <button class="notification-btn" onclick="window.location.href='notifications.html'">
+
+                        🔔
+
+                        <span class="notification-count" id="notificationCount">
+
+                            0
+
+                        </span>
+
+                    </button>
+
+
+                    <div class="user-info">
+
+                        <div class="user-avatar" id="userAvatar">
+
+                            A
+
+                        </div>
+
+
+                        <div class="user-details">
+
+                            <strong id="topUserName">
+                                Admin User
+                            </strong>
+
+                            <span>
+                                Savings Account
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+
+            <!-- PAGE CONTENT -->
+
+
+            <section class="dashboard-content">
+
+
+                <!-- PAGE HEADER -->
+
+                <div class="page-header">
+
+                    <div>
+
+                        <h1 class="page-title">
+                            Withdraw Money
+                        </h1>
+
+                        <p class="page-description">
+                            Withdraw money from your bank account.
+                        </p>
+
+                    </div>
+
+
+                    <a href="dashboard.html" class="btn-secondary">
+
+                        ← Back to Dashboard
+
+                    </a>
+
+                </div>
+
+
+
+
+                <!-- SUMMARY -->
+
+
+                <div class="summary-grid">
+
+
+                    <div class="summary-card">
+
+                        <div class="summary-icon">
+                            💰
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Available Balance
+                            </span>
+
+                            <strong id="currentBalance">
+                                ₹50,000.00
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="summary-card">
+
+                        <div class="summary-icon">
+                            💸
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Total Withdrawals
+                            </span>
+
+                            <strong id="totalWithdrawals">
+                                ₹0.00
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+
+                <!-- PAGE GRID -->
+
+
+                <div class="page-grid">
+
+
+
+                    <!-- WITHDRAW FORM -->
+
+
+                    <div class="form-card">
+
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <h3>
+                                    Make a Withdrawal
+                                </h3>
+
+                                <p class="form-subtitle">
+                                    Enter the amount you want to withdraw.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <form id="withdrawForm">
+
+
+                            <!-- AMOUNT -->
+
+                            <div class="form-group">
+
+                                <label for="withdrawAmount">
+                                    Withdrawal Amount
+                                </label>
+
+
+                                <div class="amount-input-wrapper">
+
+                                    <span>
+                                        ₹
+                                    </span>
+
+
+                                    <input type="number" id="withdrawAmount" name="withdrawAmount"
+                                        placeholder="Enter amount" min="1" step="0.01" required>
+
+                                </div>
+
+
+                                <small class="form-hint">
+                                    Available balance:
+                                    <strong id="availableBalanceHint">
+                                        ₹50,000.00
+                                    </strong>
+                                </small>
+
+
+                                <div class="error-message" id="amountError">
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- DESCRIPTION -->
+
+                            <div class="form-group">
+
+                                <label for="withdrawDescription">
+                                    Description
+                                </label>
+
+
+                                <input type="text" id="withdrawDescription" name="withdrawDescription"
+                                    placeholder="Example: ATM Withdrawal" maxlength="100">
+
+
+                                <small class="form-hint">
+                                    Optional
+                                </small>
+
+                            </div>
+
+
+
+                            <!-- QUICK AMOUNTS -->
+
+                            <div class="form-group">
+
+                                <label>
+                                    Quick Amount
+                                </label>
+
+
+                                <div class="quick-amounts">
+
+
+                                    <button type="button" class="quick-amount" data-amount="500">
+
+                                        ₹500
+
+                                    </button>
+
+
+                                    <button type="button" class="quick-amount" data-amount="1000">
+
+                                        ₹1,000
+
+                                    </button>
+
+
+                                    <button type="button" class="quick-amount" data-amount="5000">
+
+                                        ₹5,000
+
+                                    </button>
+
+
+                                    <button type="button" class="quick-amount" data-amount="10000">
+
+                                        ₹10,000
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- WARNING -->
+
+                            <div class="alert alert-warning">
+
+                                ⚠️ Please make sure you have enough
+                                balance before making a withdrawal.
+
+                            </div>
+
+
+
+                            <!-- MESSAGE -->
+
+                            <div id="withdrawMessage" class="form-message">
+                            </div>
+
+
+
+                            <!-- SUBMIT -->
+
+                            <button type="submit" class="btn-danger btn-full" id="withdrawButton">
+
+                                💸 Withdraw Money
+
+                            </button>
+
+
+                        </form>
+
+                    </div>
+
+
+
+
+                    <!-- INFORMATION CARD -->
+
+
+                    <div class="info-card">
+
+
+                        <div class="info-icon">
+                            🏧
+                        </div>
+
+
+                        <h3>
+                            Withdrawal Information
+                        </h3>
+
+
+                        <p>
+                            Your withdrawal will immediately update
+                            the available balance in this demo system.
+                        </p>
+
+
+                        <div class="info-list">
+
+
+                            <div class="info-item">
+
+                                <span>✓</span>
+
+                                Balance checked automatically
+
+                            </div>
+
+
+                            <div class="info-item">
+
+                                <span>✓</span>
+
+                                Insufficient balance protection
+
+                            </div>
+
+
+                            <div class="info-item">
+
+                                <span>✓</span>
+
+                                Transaction automatically recorded
+
+                            </div>
+
+
+                            <div class="info-item">
+
+                                <span>✓</span>
+
+                                Notification generated
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="js/common.js"></script>
+    <script src="js/withdraw.js"></script>
+
+
+</body>
+
+</html>

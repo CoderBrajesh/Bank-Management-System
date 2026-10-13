@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Transactions - SecureBank</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <div class="bank-layout">
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+        <!-- ================= SIDEBAR ================= -->
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                <div class="logo-icon">S</div>
+                <div>
+                    <h2>SecureBank</h2>
+                    <span>Online Banking</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a href="dashboard.html" class="nav-item">
+                    <span>🏠</span>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="deposit.html" class="nav-item">
+                    <span>💰</span>
+                    <span>Deposit</span>
+                </a>
+
+                <a href="withdraw.html" class="nav-item">
+                    <span>💸</span>
+                    <span>Withdraw</span>
+                </a>
+
+                <a href="transfer.html" class="nav-item">
+                    <span>↗️</span>
+                    <span>Transfer</span>
+                </a>
+
+                <a href="transactions.html" class="nav-item active">
+                    <span>📋</span>
+                    <span>Transactions</span>
+                </a>
+
+                <a href="account.html" class="nav-item">
+                    <span>👤</span>
+                    <span>Account Details</span>
+                </a>
+
+                <a href="card.html" class="nav-item">
+                    <span>💳</span>
+                    <span>My Card</span>
+                </a>
+
+                <a href="beneficiaries.html" class="nav-item">
+                    <span>👥</span>
+                    <span>Beneficiaries</span>
+                </a>
+
+                <a href="statement.html" class="nav-item">
+                    <span>📄</span>
+                    <span>Bank Statement</span>
+                </a>
+
+                <a href="notifications.html" class="nav-item">
+                    <span>🔔</span>
+                    <span>Notifications</span>
+                </a>
+
+                <a href="settings.html" class="nav-item">
+                    <span>⚙️</span>
+                    <span>Settings</span>
+                </a>
+
+            </nav>
+
+            <button class="logout-btn">
+                <span>🚪</span>
+                Logout
+            </button>
+
+        </aside>
+
+
+        <!-- ================= MAIN CONTENT ================= -->
+        <main class="main-content">
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    ☰
+                </button>
+
+                <div class="topbar-spacer"></div>
+
+                <div class="topbar-actions">
+
+                    <button class="notification-btn">
+                        🔔
+                        <span class="notification-count" id="notificationCount">0</span>
+                    </button>
+
+                    <div class="user-profile">
+
+                        <div class="user-avatar" id="userAvatar">
+                            A
+                        </div>
+
+                        <div class="user-info">
+                            <strong id="userName">Admin User</strong>
+                            <span>Savings Account</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- ================= PAGE ================= -->
+            <section class="page-content">
+
+                <!-- PAGE HEADER -->
+                <div class="page-header">
+
+                    <div>
+                        <h1 class="page-title">
+                            Transaction History
+                        </h1>
+
+                        <p class="page-description">
+                            View and manage all your banking transactions.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- ================= SUMMARY ================= -->
+                <div class="summary-grid">
+
+                    <div class="summary-card">
+
+                        <div class="summary-icon">
+                            📋
+                        </div>
+
+                        <div>
+                            <span>Total Transactions</span>
+                            <strong id="totalTransactions">
+                                0
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="summary-card">
+
+                        <div class="summary-icon">
+                            💰
+                        </div>
+
+                        <div>
+                            <span>Current Balance</span>
+                            <strong id="currentBalance">
+                                ₹0
+                            </strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= FILTER SECTION ================= -->
+                <div class="card filter-card">
+
+                    <div class="filter-header">
+
+                        <div>
+                            <h2 class="section-title">
+                                Search & Filter
+                            </h2>
+
+                            <p class="form-subtitle">
+                                Find a specific transaction quickly.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="advanced-filter-grid">
+
+                        <!-- SEARCH -->
+                        <div class="filter-group">
+
+                            <label for="transactionSearch">
+                                Search Transaction
+                            </label>
+
+                            <div class="search-box">
+
+                                <span class="search-icon">
+                                    🔍
+                                </span>
+
+                                <input type="text" id="transactionSearch"
+                                    placeholder="Search ID, description, receiver...">
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- TYPE -->
+                        <div class="filter-group">
+
+                            <label for="transactionType">
+                                Transaction Type
+                            </label>
+
+                            <select id="transactionType">
+
+                                <option value="all">
+                                    All Transactions
+                                </option>
+
+                                <option value="credit">
+                                    Credit
+                                </option>
+
+                                <option value="debit">
+                                    Debit
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- DATE -->
+                        <div class="filter-group">
+
+                            <label for="dateFilter">
+                                Date
+                            </label>
+
+                            <select id="dateFilter">
+
+                                <option value="all">
+                                    All Dates
+                                </option>
+
+                                <option value="today">
+                                    Today
+                                </option>
+
+                                <option value="7days">
+                                    Last 7 Days
+                                </option>
+
+                                <option value="30days">
+                                    Last 30 Days
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- CLEAR -->
+                        <div class="filter-actions">
+
+                            <button type="button" class="btn-secondary" id="clearFilters">
+                                Clear Filters
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= TRANSACTIONS TABLE ================= -->
+                <div class="card transaction-table-card">
+
+                    <div class="transaction-table-header">
+
+                        <div>
+
+                            <h2 class="section-title">
+                                Transactions
+                            </h2>
+
+                            <p class="table-result-count" id="resultCount">
+                                Showing 0 transactions
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="table-wrapper">
+
+                        <table class="table transaction-table">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Transaction ID
+                                    </th>
+
+                                    <th>
+                                        Date & Time
+                                    </th>
+
+                                    <th>
+                                        Description
+                                    </th>
+
+                                    <th>
+                                        Type
+                                    </th>
+
+                                    <th>
+                                        Receiver
+                                    </th>
+
+                                    <th>
+                                        Amount
+                                    </th>
+
+                                    <th>
+                                        Status
+                                    </th>
+
+                                    <th>
+                                        Action
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="transactionTableBody">
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+
+                    <!-- EMPTY STATE -->
+                    <div class="transaction-empty" id="emptyState">
+
+                        <div class="empty-icon">
+                            🔍
+                        </div>
+
+                        <h3>
+                            No Transactions Found
+                        </h3>
+
+                        <p>
+                            No transactions match your search or filter.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- ================= TRANSACTION DETAILS MODAL ================= -->
+
+    <div class="modal-overlay" id="transactionModal">
+
+        <div class="modal">
+
+            <div class="modal-header">
+
+                <div>
+                    <h2>
+                        Transaction Details
+                    </h2>
+
+                    <p>
+                        Complete transaction information
+                    </p>
+                </div>
+
+                <button class="modal-close" id="closeTransactionModal">
+                    ×
+                </button>
+
+            </div>
+
+
+            <div class="transaction-details" id="transactionDetails">
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button class="btn-secondary" id="closeModalBtn">
+                    Close
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/common.js"></script>
+    <script src="js/transactions.js"></script>
+
+</body>
+
+</html>

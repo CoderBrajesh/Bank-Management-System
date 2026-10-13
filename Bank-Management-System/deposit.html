@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Deposit Money - SecureBank</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+
+<body>
+
+
+    <div class="dashboard-layout">
+
+
+
+        <!-- SIDEBAR -->
+
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-logo">
+
+                <h2>🏦 SecureBank</h2>
+
+                <p>Bank Management System</p>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <p class="nav-title">
+                    Main Menu
+                </p>
+
+
+                <a href="dashboard.html" class="nav-item">
+
+                    <span class="nav-icon">
+                        📊
+                    </span>
+
+                    Dashboard
+
+                </a>
+
+
+                <a href="deposit.html" class="nav-item active">
+
+                    <span class="nav-icon">
+                        💰
+                    </span>
+
+                    Deposit
+
+                </a>
+
+
+                <a href="withdraw.html" class="nav-item">
+
+                    <span class="nav-icon">
+                        💸
+                    </span>
+
+                    Withdraw
+
+                </a>
+
+
+                <a href="transfer.html" class="nav-item">
+
+                    <span class="nav-icon">
+                        🔄
+                    </span>
+
+                    Transfer
+
+                </a>
+
+
+                <a href="transactions.html" class="nav-item">
+
+                    <span class="nav-icon">
+                        📋
+                    </span>
+
+                    Transactions
+
+                </a>
+
+
+
+                <p class="nav-title" style="margin-top:25px;">
+
+                    Account
+
+                </p>
+
+
+                <a href="account.html" class="nav-item">
+
+                    <span class="nav-icon">
+                        👤
+                    </span>
+
+                    Account Details
+
+                </a>
+
+
+                <a href="card.html" class="nav-item">
+
+                    <span class="nav-icon">
+                        💳
+                    </span>
+
+                    My Card
+
+                </a>
+
+
+                <a href="beneficiaries.html" class="nav-item">
+
+                    <span class="nav-icon">
+                        👥
+                    </span>
+
+                    Beneficiaries
+
+                </a>
+
+
+                <a href="statement.html" class="nav-item">
+
+                    <span class="nav-icon">
+                        📄
+                    </span>
+
+                    Bank Statement
+
+                </a>
+
+
+                <a href="notifications.html" class="nav-item">
+
+                    <span class="nav-icon">
+                        🔔
+                    </span>
+
+                    Notifications
+
+                </a>
+
+
+                <a href="settings.html" class="nav-item">
+
+                    <span class="nav-icon">
+                        ⚙️
+                    </span>
+
+                    Settings
+
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-footer">
+
+                <button class="btn-danger logout-btn">
+                    🚪 Logout
+                </button>
+
+            </div>
+
+        </aside>
+
+
+
+
+        <!-- MAIN CONTENT -->
+
+
+        <main class="dashboard-main">
+
+
+            <!-- TOPBAR -->
+
+            <header class="dashboard-topbar">
+
+
+                <div>
+
+                    <button class="menu-btn" id="menuBtn">
+
+                        ☰
+
+                    </button>
+
+
+                    <span class="topbar-title">
+                        Deposit Money
+                    </span>
+
+                </div>
+
+
+                <div class="topbar-right">
+
+
+                    <button class="notification-btn" onclick="window.location.href='notifications.html'">
+
+                        🔔
+
+                        <span class="notification-count" id="notificationCount">
+
+                            0
+
+                        </span>
+
+                    </button>
+
+
+                    <div class="user-info">
+
+                        <div class="user-avatar" id="userAvatar">
+
+                            A
+
+                        </div>
+
+
+                        <div class="user-details">
+
+                            <strong id="topUserName">
+                                Admin User
+                            </strong>
+
+                            <span>
+                                Savings Account
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- PAGE CONTENT -->
+
+            <section class="dashboard-content">
+
+
+                <!-- PAGE HEADER -->
+
+                <div class="page-header">
+
+                    <div>
+
+                        <h1 class="page-title">
+                            Deposit Money
+                        </h1>
+
+                        <p class="page-description">
+                            Add money to your bank account securely.
+                        </p>
+
+                    </div>
+
+
+                    <a href="dashboard.html" class="btn-secondary">
+
+                        ← Back to Dashboard
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- BALANCE SUMMARY -->
+
+                <div class="summary-grid">
+
+
+                    <div class="summary-card">
+
+                        <div class="summary-icon">
+                            💰
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Current Balance
+                            </span>
+
+                            <strong id="currentBalance">
+                                ₹50,000.00
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="summary-card">
+
+                        <div class="summary-icon">
+                            📥
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Total Deposits
+                            </span>
+
+                            <strong id="totalDeposits">
+
+                                ₹50,000.00
+
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- DEPOSIT FORM -->
+
+                <div class="page-grid">
+
+
+                    <!-- FORM -->
+
+                    <div class="form-card">
+
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <h3>
+                                    Make a Deposit
+                                </h3>
+
+                                <p class="form-subtitle">
+                                    Enter the amount you want to deposit.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <form id="depositForm">
+
+
+                            <!-- AMOUNT -->
+
+                            <div class="form-group">
+
+                                <label for="depositAmount">
+                                    Deposit Amount
+                                </label>
+
+
+                                <div class="amount-input-wrapper">
+
+                                    <span>
+                                        ₹
+                                    </span>
+
+
+                                    <input type="number" id="depositAmount" name="depositAmount"
+                                        placeholder="Enter amount" min="1" step="0.01" required>
+
+                                </div>
+
+
+                                <small class="form-hint">
+                                    Minimum deposit amount: ₹1
+                                </small>
+
+
+                                <div class="error-message" id="amountError">
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- DESCRIPTION -->
+
+                            <div class="form-group">
+
+                                <label for="depositDescription">
+                                    Description
+                                </label>
+
+
+                                <input type="text" id="depositDescription" name="depositDescription"
+                                    placeholder="Example: Salary, Cash Deposit" maxlength="100">
+
+
+                                <small class="form-hint">
+                                    Optional
+                                </small>
+
+                            </div>
+
+
+
+                            <!-- QUICK AMOUNTS -->
+
+                            <div class="form-group">
+
+                                <label>
+                                    Quick Amount
+                                </label>
+
+
+                                <div class="quick-amounts">
+
+
+                                    <button type="button" class="quick-amount" data-amount="1000">
+
+                                        ₹1,000
+
+                                    </button>
+
+
+                                    <button type="button" class="quick-amount" data-amount="5000">
+
+                                        ₹5,000
+
+                                    </button>
+
+
+                                    <button type="button" class="quick-amount" data-amount="10000">
+
+                                        ₹10,000
+
+                                    </button>
+
+
+                                    <button type="button" class="quick-amount" data-amount="25000">
+
+                                        ₹25,000
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- MESSAGE -->
+
+                            <div id="depositMessage" class="form-message">
+                            </div>
+
+
+
+                            <!-- SUBMIT -->
+
+                            <button type="submit" class="btn-primary btn-full" id="depositButton">
+
+                                💰 Deposit Money
+
+                            </button>
+
+
+                        </form>
+
+                    </div>
+
+
+
+                    <!-- INFORMATION CARD -->
+
+                    <div class="info-card">
+
+
+                        <div class="info-icon">
+                            🔐
+                        </div>
+
+
+                        <h3>
+                            Secure Deposit
+                        </h3>
+
+
+                        <p>
+                            Your deposit information is stored securely
+                            in this demo banking system.
+                        </p>
+
+
+                        <div class="info-list">
+
+
+                            <div class="info-item">
+
+                                <span>
+                                    ✓
+                                </span>
+
+                                Instant balance update
+
+                            </div>
+
+
+                            <div class="info-item">
+
+                                <span>
+                                    ✓
+                                </span>
+
+                                Transaction automatically recorded
+
+                            </div>
+
+
+                            <div class="info-item">
+
+                                <span>
+                                    ✓
+                                </span>
+
+                                Notification generated
+
+                            </div>
+
+
+                            <div class="info-item">
+
+                                <span>
+                                    ✓
+                                </span>
+
+                                Data saved in LocalStorage
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="js/common.js"></script>
+    <script src="js/deposit.js"></script>
+
+
+</body>
+
+</html>

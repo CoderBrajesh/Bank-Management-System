@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Beneficiaries - SecureBank</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/dashboard.css">
+
+    <link rel="stylesheet" href="css/pages.css">
+
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+
+<body>
+
+
+    <div class="bank-layout">
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+
+        <!-- SIDEBAR -->
+
+
+        <aside class="sidebar">
+
+
+            <div class="sidebar-logo">
+
+                <div class="logo-icon">
+                    S
+                </div>
+
+                <div>
+
+                    <h2>
+                        SecureBank
+                    </h2>
+
+                    <span>
+                        Online Banking
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+
+                <a href="dashboard.html" class="nav-item">
+                    <span>🏠</span>
+                    <span>Dashboard</span>
+                </a>
+
+
+                <a href="deposit.html" class="nav-item">
+                    <span>💰</span>
+                    <span>Deposit</span>
+                </a>
+
+
+                <a href="withdraw.html" class="nav-item">
+                    <span>💸</span>
+                    <span>Withdraw</span>
+                </a>
+
+
+                <a href="transfer.html" class="nav-item">
+                    <span>↗️</span>
+                    <span>Transfer</span>
+                </a>
+
+
+                <a href="transactions.html" class="nav-item">
+                    <span>📋</span>
+                    <span>Transactions</span>
+                </a>
+
+
+                <a href="account.html" class="nav-item">
+                    <span>👤</span>
+                    <span>Account Details</span>
+                </a>
+
+
+                <a href="card.html" class="nav-item">
+                    <span>💳</span>
+                    <span>My Card</span>
+                </a>
+
+
+                <a href="beneficiaries.html" class="nav-item active">
+                    <span>👥</span>
+                    <span>Beneficiaries</span>
+                </a>
+
+
+                <a href="statement.html" class="nav-item">
+                    <span>📄</span>
+                    <span>Bank Statement</span>
+                </a>
+
+
+                <a href="notifications.html" class="nav-item">
+                    <span>🔔</span>
+                    <span>Notifications</span>
+                </a>
+
+
+                <a href="settings.html" class="nav-item">
+                    <span>⚙️</span>
+                    <span>Settings</span>
+                </a>
+
+
+            </nav>
+
+
+            <button class="logout-btn">
+
+                <span>🚪</span>
+
+                Logout
+
+            </button>
+
+
+        </aside>
+
+
+
+
+        <!-- MAIN CONTENT -->
+
+
+        <main class="main-content">
+
+
+            <!-- TOPBAR -->
+
+            <header class="topbar">
+
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    ☰
+                </button>
+
+
+                <div class="topbar-spacer"></div>
+
+
+                <div class="topbar-actions">
+
+
+                    <button class="notification-btn">
+
+                        🔔
+
+                        <span class="notification-count" id="notificationCount">
+                            0
+                        </span>
+
+                    </button>
+
+
+                    <div class="user-profile">
+
+
+                        <div class="user-avatar" id="userAvatar">
+                            A
+                        </div>
+
+
+                        <div class="user-info">
+
+                            <strong id="userName">
+                                Admin User
+                            </strong>
+
+                            <span>
+                                Customer
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </header>
+
+
+
+
+            <!-- PAGE CONTENT -->
+
+
+            <section class="page-content">
+
+
+                <!-- PAGE HEADER -->
+
+                <div class="page-header">
+
+
+                    <div>
+
+                        <h1 class="page-title">
+                            Beneficiaries
+                        </h1>
+
+                        <p class="page-description">
+                            Manage the people and accounts you frequently transfer money to.
+                        </p>
+
+                    </div>
+
+
+                    <button class="btn-primary" id="addBeneficiaryBtn">
+                        + Add Beneficiary
+                    </button>
+
+
+                </div>
+
+
+
+
+                <!-- SUMMARY -->
+
+
+                <div class="summary-grid">
+
+
+                    <div class="summary-card">
+
+                        <div class="summary-icon">
+                            👥
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Total Beneficiaries
+                            </span>
+
+                            <strong id="beneficiaryCount">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="summary-card">
+
+                        <div class="summary-icon">
+                            🏦
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Saved Accounts
+                            </span>
+
+                            <strong id="savedAccountCount">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+
+                <!-- SEARCH -->
+
+
+                <div class="card beneficiary-search-card">
+
+
+                    <div class="search-box">
+
+                        <span class="search-icon">
+                            🔍
+                        </span>
+
+                        <input type="text" id="beneficiarySearch"
+                            placeholder="Search beneficiary, bank or account number...">
+
+                    </div>
+
+
+                </div>
+
+
+
+
+                <!-- BENEFICIARY LIST -->
+
+
+                <div class="card beneficiary-list-card">
+
+
+                    <div class="beneficiary-list-header">
+
+                        <div>
+
+                            <h2 class="section-title">
+                                Saved Beneficiaries
+                            </h2>
+
+                            <p class="table-result-count" id="beneficiaryResultCount">
+                                Showing 0 beneficiaries
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="beneficiary-list" id="beneficiaryList">
+                    </div>
+
+
+                    <!-- EMPTY STATE -->
+
+                    <div class="beneficiary-empty" id="beneficiaryEmpty">
+
+                        <div class="empty-icon">
+                            👥
+                        </div>
+
+                        <h3>
+                            No Beneficiaries Found
+                        </h3>
+
+                        <p>
+                            Add a beneficiary to make future transfers easier.
+                        </p>
+
+                        <button class="btn-primary" id="emptyAddButton">
+                            + Add Beneficiary
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+
+    </div>
+
+
+
+
+    <!-- ADD BENEFICIARY MODAL -->
+
+
+    <div class="modal-overlay" id="beneficiaryModal">
+
+
+        <div class="modal beneficiary-modal">
+
+
+            <!-- MODAL HEADER -->
+
+            <div class="modal-header">
+
+
+                <div>
+
+                    <h2>
+                        Add Beneficiary
+                    </h2>
+
+                    <p>
+                        Save a new account for quick transfers.
+                    </p>
+
+                </div>
+
+
+                <button class="modal-close" id="closeBeneficiaryModal">
+                    ×
+                </button>
+
+
+            </div>
+
+
+
+            <!-- FORM -->
+
+            <form id="beneficiaryForm">
+
+
+                <div class="form-group">
+
+                    <label for="beneficiaryName">
+                        Beneficiary Name
+                    </label>
+
+                    <input type="text" id="beneficiaryName" placeholder="Enter full name" required>
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label for="beneficiaryBank">
+                        Bank Name
+                    </label>
+
+                    <input type="text" id="beneficiaryBank" placeholder="Enter bank name" required>
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label for="beneficiaryAccount">
+                        Account Number
+                    </label>
+
+                    <input type="text" id="beneficiaryAccount" placeholder="Enter account number" inputmode="numeric"
+                        required>
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label for="beneficiaryIfsc">
+                        IFSC Code
+                    </label>
+
+                    <input type="text" id="beneficiaryIfsc" placeholder="Example: SBIN0001234" maxlength="11" required>
+
+                </div>
+
+
+
+                <div class="form-message" id="beneficiaryMessage">
+                </div>
+
+
+
+                <div class="beneficiary-modal-actions">
+
+
+                    <button type="button" class="btn-secondary" id="cancelBeneficiaryBtn">
+                        Cancel
+                    </button>
+
+
+                    <button type="submit" class="btn-primary">
+                        Save Beneficiary
+                    </button>
+
+
+                </div>
+
+
+            </form>
+
+
+        </div>
+
+    </div>
+
+
+
+    <script src="js/common.js"></script>
+
+    <script src="js/beneficiaries.js"></script>
+
+
+</body>
+
+</html>

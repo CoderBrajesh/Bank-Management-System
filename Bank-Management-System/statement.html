@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bank Statement - SecureBank</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/dashboard.css">
+
+    <link rel="stylesheet" href="css/pages.css">
+
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+
+<body>
+
+
+    <div class="bank-layout">
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+
+        <!-- SIDEBAR -->
+
+
+        <aside class="sidebar">
+
+
+            <div class="sidebar-logo">
+
+                <div class="logo-icon">
+                    S
+                </div>
+
+                <div>
+
+                    <h2>
+                        SecureBank
+                    </h2>
+
+                    <span>
+                        Online Banking
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+
+                <a href="dashboard.html" class="nav-item">
+                    <span>🏠</span>
+                    <span>Dashboard</span>
+                </a>
+
+
+                <a href="deposit.html" class="nav-item">
+                    <span>💰</span>
+                    <span>Deposit</span>
+                </a>
+
+
+                <a href="withdraw.html" class="nav-item">
+                    <span>💸</span>
+                    <span>Withdraw</span>
+                </a>
+
+
+                <a href="transfer.html" class="nav-item">
+                    <span>↗️</span>
+                    <span>Transfer</span>
+                </a>
+
+
+                <a href="transactions.html" class="nav-item">
+                    <span>📋</span>
+                    <span>Transactions</span>
+                </a>
+
+
+                <a href="account.html" class="nav-item">
+                    <span>👤</span>
+                    <span>Account Details</span>
+                </a>
+
+
+                <a href="card.html" class="nav-item">
+                    <span>💳</span>
+                    <span>My Card</span>
+                </a>
+
+
+                <a href="beneficiaries.html" class="nav-item">
+                    <span>👥</span>
+                    <span>Beneficiaries</span>
+                </a>
+
+
+                <a href="statement.html" class="nav-item active">
+                    <span>📄</span>
+                    <span>Bank Statement</span>
+                </a>
+
+
+                <a href="notifications.html" class="nav-item">
+                    <span>🔔</span>
+                    <span>Notifications</span>
+                </a>
+
+
+                <a href="settings.html" class="nav-item">
+                    <span>⚙️</span>
+                    <span>Settings</span>
+                </a>
+
+
+            </nav>
+
+
+            <button class="logout-btn">
+
+                <span>🚪</span>
+
+                Logout
+
+            </button>
+
+
+        </aside>
+
+
+
+
+        <!-- MAIN CONTENT -->
+
+
+        <main class="main-content">
+
+
+            <!-- TOPBAR -->
+
+            <header class="topbar">
+
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    ☰
+                </button>
+
+
+                <div class="topbar-spacer"></div>
+
+
+                <div class="topbar-actions">
+
+
+                    <button class="notification-btn">
+
+                        🔔
+
+                        <span class="notification-count" id="notificationCount">
+                            0
+                        </span>
+
+                    </button>
+
+
+                    <div class="user-profile">
+
+
+                        <div class="user-avatar" id="userAvatar">
+                            A
+                        </div>
+
+
+                        <div class="user-info">
+
+                            <strong id="userName">
+                                Admin User
+                            </strong>
+
+                            <span>
+                                Customer
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </header>
+
+
+
+
+            <!-- PAGE CONTENT -->
+
+
+            <section class="page-content">
+
+
+                <!-- PAGE HEADER -->
+
+                <div class="page-header">
+
+
+                    <div>
+
+                        <h1 class="page-title">
+                            Bank Statement
+                        </h1>
+
+                        <p class="page-description">
+                            Generate and view your account statement.
+                        </p>
+
+                    </div>
+
+
+                    <div class="statement-header-actions">
+
+                        <button type="button" class="btn-secondary" id="printStatementBtn">
+                            🖨️ Print Statement
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+
+
+
+                <!-- ACCOUNT SUMMARY -->
+
+
+                <div class="card statement-account-card">
+
+
+                    <div class="statement-account-left">
+
+
+                        <div class="statement-bank-icon">
+                            🏦
+                        </div>
+
+
+                        <div>
+
+                            <h2>
+                                SecureBank
+                            </h2>
+
+                            <p>
+                                Account Statement
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="statement-account-details">
+
+
+                        <div>
+
+                            <span>
+                                Account Holder
+                            </span>
+
+                            <strong id="statementUserName">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Account Number
+                            </span>
+
+                            <strong id="statementAccountNumber">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                IFSC
+                            </span>
+
+                            <strong id="statementIfsc">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+
+                <!-- FILTER -->
+
+
+                <div class="card statement-filter-card">
+
+
+                    <div class="statement-filter-header">
+
+                        <div>
+
+                            <h2 class="section-title">
+                                Statement Period
+                            </h2>
+
+                            <p class="form-subtitle">
+                                Select a date range and transaction type.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="statement-filter-grid">
+
+
+                        <!-- FROM -->
+
+                        <div class="form-group">
+
+                            <label for="fromDate">
+                                From Date
+                            </label>
+
+                            <input type="date" id="fromDate">
+
+                        </div>
+
+
+                        <!-- TO -->
+
+                        <div class="form-group">
+
+                            <label for="toDate">
+                                To Date
+                            </label>
+
+                            <input type="date" id="toDate">
+
+                        </div>
+
+
+                        <!-- TYPE -->
+
+                        <div class="form-group">
+
+                            <label for="statementType">
+                                Transaction Type
+                            </label>
+
+                            <select id="statementType">
+
+                                <option value="all">
+                                    All Transactions
+                                </option>
+
+                                <option value="credit">
+                                    Credit Only
+                                </option>
+
+                                <option value="debit">
+                                    Debit Only
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- ACTIONS -->
+
+                        <div class="statement-filter-actions">
+
+                            <button type="button" class="btn-primary" id="generateStatementBtn">
+                                Generate Statement
+                            </button>
+
+
+                            <button type="button" class="btn-secondary" id="resetStatementBtn">
+                                Reset
+                            </button>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="form-message" id="statementMessage">
+                    </div>
+
+
+                </div>
+
+
+
+
+                <!-- STATEMENT SUMMARY -->
+
+
+                <div class="statement-summary-grid">
+
+
+                    <div class="statement-summary-card">
+
+                        <span>
+                            Opening Balance
+                        </span>
+
+                        <strong id="openingBalance">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="statement-summary-card credit-summary">
+
+                        <span>
+                            Total Credit
+                        </span>
+
+                        <strong id="totalCredit">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="statement-summary-card debit-summary">
+
+                        <span>
+                            Total Debit
+                        </span>
+
+                        <strong id="totalDebit">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="statement-summary-card">
+
+                        <span>
+                            Closing Balance
+                        </span>
+
+                        <strong id="closingBalance">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+
+
+                <!-- STATEMENT -->
+
+
+                <div class="card statement-card" id="statementPrintable">
+
+
+                    <div class="statement-document-header">
+
+
+                        <div>
+
+                            <h2>
+                                Transaction Statement
+                            </h2>
+
+                            <p id="statementPeriodText">
+                                All Transactions
+                            </p>
+
+                        </div>
+
+
+                        <div class="statement-document-logo">
+                            SecureBank
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="table-wrapper">
+
+
+                        <table class="table statement-table">
+
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Date
+                                    </th>
+
+                                    <th>
+                                        Transaction ID
+                                    </th>
+
+                                    <th>
+                                        Description
+                                    </th>
+
+                                    <th>
+                                        Type
+                                    </th>
+
+                                    <th>
+                                        Debit
+                                    </th>
+
+                                    <th>
+                                        Credit
+                                    </th>
+
+                                    <th>
+                                        Balance
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="statementTableBody">
+                            </tbody>
+
+
+                        </table>
+
+
+                    </div>
+
+
+
+                    <!-- EMPTY -->
+
+                    <div class="statement-empty" id="statementEmpty">
+
+                        <div class="empty-icon">
+                            📄
+                        </div>
+
+                        <h3>
+                            No Transactions Found
+                        </h3>
+
+                        <p>
+                            No transactions are available for the selected period.
+                        </p>
+
+                    </div>
+
+
+                    <div class="statement-footer" id="statementFooter">
+
+                        <span>
+                            Generated by SecureBank Demo System
+                        </span>
+
+                        <span id="statementGeneratedDate">
+                            —
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+
+    </div>
+
+
+
+    <script src="js/common.js"></script>
+
+    <script src="js/statement.js"></script>
+
+
+</body>
+
+</html>

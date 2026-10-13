@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Card - SecureBank</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/dashboard.css">
+
+    <link rel="stylesheet" href="css/pages.css">
+
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+
+<body>
+
+
+    <div class="bank-layout">
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+
+        <!-- SIDEBAR -->
+
+
+        <aside class="sidebar">
+
+
+            <div class="sidebar-logo">
+
+                <div class="logo-icon">
+                    S
+                </div>
+
+                <div>
+
+                    <h2>
+                        SecureBank
+                    </h2>
+
+                    <span>
+                        Online Banking
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+
+                <a href="dashboard.html" class="nav-item">
+                    <span>🏠</span>
+                    <span>Dashboard</span>
+                </a>
+
+
+                <a href="deposit.html" class="nav-item">
+                    <span>💰</span>
+                    <span>Deposit</span>
+                </a>
+
+
+                <a href="withdraw.html" class="nav-item">
+                    <span>💸</span>
+                    <span>Withdraw</span>
+                </a>
+
+
+                <a href="transfer.html" class="nav-item">
+                    <span>↗️</span>
+                    <span>Transfer</span>
+                </a>
+
+
+                <a href="transactions.html" class="nav-item">
+                    <span>📋</span>
+                    <span>Transactions</span>
+                </a>
+
+
+                <a href="account.html" class="nav-item">
+                    <span>👤</span>
+                    <span>Account Details</span>
+                </a>
+
+
+                <a href="card.html" class="nav-item active">
+                    <span>💳</span>
+                    <span>My Card</span>
+                </a>
+
+
+                <a href="beneficiaries.html" class="nav-item">
+                    <span>👥</span>
+                    <span>Beneficiaries</span>
+                </a>
+
+
+                <a href="statement.html" class="nav-item">
+                    <span>📄</span>
+                    <span>Bank Statement</span>
+                </a>
+
+
+                <a href="notifications.html" class="nav-item">
+                    <span>🔔</span>
+                    <span>Notifications</span>
+                </a>
+
+
+                <a href="settings.html" class="nav-item">
+                    <span>⚙️</span>
+                    <span>Settings</span>
+                </a>
+
+
+            </nav>
+
+
+            <button class="logout-btn">
+
+                <span>🚪</span>
+
+                Logout
+
+            </button>
+
+
+        </aside>
+
+
+
+
+        <!-- MAIN CONTENT -->
+
+
+        <main class="main-content">
+
+
+            <!-- TOPBAR -->
+
+            <header class="topbar">
+
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    ☰
+                </button>
+
+
+                <div class="topbar-spacer"></div>
+
+
+                <div class="topbar-actions">
+
+
+                    <button class="notification-btn">
+
+                        🔔
+
+                        <span class="notification-count" id="notificationCount">
+                            0
+                        </span>
+
+                    </button>
+
+
+                    <div class="user-profile">
+
+
+                        <div class="user-avatar" id="userAvatar">
+                            A
+                        </div>
+
+
+                        <div class="user-info">
+
+                            <strong id="userName">
+                                Admin User
+                            </strong>
+
+                            <span>
+                                Customer
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </header>
+
+
+
+
+            <!-- PAGE CONTENT -->
+
+
+            <section class="page-content">
+
+
+                <!-- PAGE HEADER -->
+
+                <div class="page-header">
+
+
+                    <div>
+
+                        <h1 class="page-title">
+                            My Card
+                        </h1>
+
+                        <p class="page-description">
+                            Manage your virtual SecureBank card.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+
+                <!-- CARD SECTION -->
+
+
+                <div class="card-page-grid">
+
+
+                    <!-- VIRTUAL CARD -->
+
+                    <div class="card virtual-card-section">
+
+
+                        <div class="card-section-heading">
+
+                            <div>
+
+                                <h2>
+                                    Virtual Debit Card
+                                </h2>
+
+                                <p>
+                                    Your demo virtual banking card
+                                </p>
+
+                            </div>
+
+
+                            <span class="card-status-badge" id="cardStatusBadge">
+                                Active
+                            </span>
+
+                        </div>
+
+
+
+                        <!-- CARD -->
+
+                        <div class="virtual-bank-card" id="virtualBankCard">
+
+
+                            <div class="card-top-row">
+
+
+                                <div class="card-brand">
+
+                                    <span class="card-brand-icon">
+                                        S
+                                    </span>
+
+                                    <span>
+                                        SecureBank
+                                    </span>
+
+                                </div>
+
+
+                                <div class="card-chip">
+                                    ▰
+                                </div>
+
+
+                            </div>
+
+
+
+                            <div class="card-number-display">
+
+                                <span id="cardNumberDisplay">
+                                    •••• •••• •••• ••••
+                                </span>
+
+                            </div>
+
+
+
+                            <div class="card-bottom-row">
+
+
+                                <div class="card-holder">
+
+                                    <span>
+                                        CARD HOLDER
+                                    </span>
+
+                                    <strong id="cardHolderName">
+                                        ADMIN USER
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="card-expiry">
+
+                                    <span>
+                                        VALID THRU
+                                    </span>
+
+                                    <strong id="cardExpiry">
+                                        ••/••
+                                    </strong>
+
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- CARD DETAILS -->
+
+                        <div class="card-details-grid">
+
+
+                            <div class="card-detail-box">
+
+
+                                <span>
+                                    Card Number
+                                </span>
+
+
+                                <strong id="cardNumberText">
+                                    •••• •••• •••• ••••
+                                </strong>
+
+
+                            </div>
+
+
+
+                            <div class="card-detail-box">
+
+
+                                <span>
+                                    Expiry Date
+                                </span>
+
+
+                                <strong id="cardExpiryText">
+                                    ••/••
+                                </strong>
+
+
+                            </div>
+
+
+
+                            <div class="card-detail-box">
+
+
+                                <span>
+                                    CVV
+                                </span>
+
+
+                                <strong id="cardCvvText">
+                                    •••
+                                </strong>
+
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- SHOW/HIDE -->
+
+                        <button type="button" class="btn-secondary card-action-button" id="toggleCardDetails">
+                            👁️ Show Card Details
+                        </button>
+
+
+                    </div>
+
+
+
+                    <!-- CARD CONTROLS -->
+
+                    <div class="card card-controls-section">
+
+
+                        <div class="card-section-heading">
+
+                            <div>
+
+                                <h2>
+                                    Card Controls
+                                </h2>
+
+                                <p>
+                                    Manage your card status.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- STATUS -->
+
+                        <div class="card-control-status">
+
+
+                            <div class="control-status-icon">
+                                💳
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Current Status
+                                </span>
+
+                                <strong id="cardStatusText">
+                                    Active
+                                </strong>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- FREEZE -->
+
+                        <button type="button" class="card-freeze-button" id="freezeCardBtn">
+
+                            <span class="freeze-icon" id="freezeIcon">
+                                ❄️
+                            </span>
+
+
+                            <span class="freeze-content">
+
+                                <strong id="freezeButtonText">
+                                    Freeze Card
+                                </strong>
+
+                                <small id="freezeButtonDescription">
+                                    Temporarily block card transactions
+                                </small>
+
+                            </span>
+
+
+                            <span class="freeze-arrow">
+                                →
+                            </span>
+
+                        </button>
+
+
+
+                        <!-- INFORMATION -->
+
+                        <div class="card-info-box">
+
+                            <div class="card-info-icon">
+                                ℹ️
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Demo Card
+                                </strong>
+
+                                <p>
+                                    This virtual card is created for
+                                    your school project demonstration.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+
+                <!-- SECURITY INFORMATION -->
+
+
+                <div class="card card-security-info">
+
+
+                    <div class="card-section-heading">
+
+                        <div>
+
+                            <h2>
+                                Card Security
+                            </h2>
+
+                            <p>
+                                Important information about your card.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-security-grid">
+
+
+                        <div class="card-security-item">
+
+                            <div class="security-feature-icon">
+                                🔒
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Card Protection
+                                </strong>
+
+                                <p>
+                                    Keep your card details private.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="card-security-item">
+
+                            <div class="security-feature-icon">
+                                👁️
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Hide Details
+                                </strong>
+
+                                <p>
+                                    Card details remain hidden by default.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="card-security-item">
+
+                            <div class="security-feature-icon">
+                                ❄️
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Freeze Card
+                                </strong>
+
+                                <p>
+                                    Freeze the demo card whenever required.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+
+    </div>
+
+
+
+    <script src="js/common.js"></script>
+
+    <script src="js/card.js"></script>
+
+
+</body>
+
+</html>
